@@ -12,11 +12,9 @@ export const PostProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     GetRequest("/posts?populate=*").then((response) => {
       if (response.status != 200) {
-        return setState({error: true, loading: false, data: {} });
+        return setState({ error: true, loading: false, data: {} });
       }
-      // Everything went fine
-      // console.log(response);
-      return setState({data:response.data, error: false, loading: false });
+      return setState({ data: response.data, error: false, loading: false });
     });
   }, []);
   return <postContext.Provider value={state}>{children}</postContext.Provider>;

@@ -1,11 +1,11 @@
 :root {
   --bg: black;
   --primary: #50e357;
-  --gitBlue: #0c46d3;
-  --gitBlack: #101010;
-  --gitGreen: #388e3c;
+  --blue: #0c46d3;
+  --black: #101010;
+  --green: #388e3c;
   --gray: #979797;
-  --git-blood: #ea4335;
+  --blood: #ea4335;
 }
 
 * {
@@ -15,45 +15,7 @@
   font-family: "Georama" !important;
 }
 
-.anton,
-.anton * {
+.typography,
+.typography * {
   font-family: "Anton" !important;
 }
-
-@media screen and (max-width: 500px) {
-  .top-news .hero .title {
-    font-size: 2rem;
-  }
-  .top-news .hero .description {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .top-header .navigation-links {
-    display: none;
-  }
-
-  .top-header .menu {
-    display: flex;
-  }
-  .top-news {
-    grid-template-columns: 1fr !important;
-  }
-
-  .top-news .aside {
-    display: none;
-  }
-
-  .top-categories h2 {
-    font-size: 2rem;
-  }
-  /* 
-  .grid-posts-items {
-    grid-template-columns: 1fr !important;
-  } */
-}
-
-/* // .footer {
-//   grid-template-columns: 1fr !important;
-// } */
