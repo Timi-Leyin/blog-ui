@@ -19,17 +19,17 @@ const News3 = ({ post }: any) => {
       <Box>
         <Flex gap={2} my={3}>
           <Tag>Food & Lifestyle</Tag>
-          <Flex align={"center"} gap={2}>
+          {/* <Flex align={"center"} gap={2}>
             <Icon as={FaBookOpen} />
             <Text>5 mins Read</Text>
-          </Flex>
+          </Flex> */}
         </Flex>
-        <Heading w="200px" className="anton" fontSize={"large"}>
-         <Link href={"post/"+post.attributes.slug}>{post.attributes.title}</Link>
+        <Heading maxW="200px" className="anton" fontSize={"large"}>
+         <Link href={"post/"}>Lorem ipsum dolor sit, amet consectetur </Link>
         </Heading>
       </Box>
       <Image
-        src={process.env.NEXT_PUBLIC_API_BASE + post.attributes.thumbnail.data.attributes.url}
+        src={"/thumbnail.webp"}
         w="80px"
         h="60px"
         borderRadius={"10px"}

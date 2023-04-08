@@ -17,7 +17,7 @@ import {
 import { AiOutlineUser } from "react-icons/ai";
 import { FaBookOpen, FaEnvelopeOpen } from "react-icons/fa";
 import truncate from "@/utils/truncate";
-const News2 = ({ post:{attributes} }: any) => {
+const News2 = ({ post }: any) => {
   // const html = document.createElement("div");
   // html.innerHTML = post.content;
   // console.log(truncate(html.textContent));
@@ -26,24 +26,24 @@ const News2 = ({ post:{attributes} }: any) => {
       <GridItem>
         <Image
           borderRadius={"10px"}
-          src={process.env.NEXT_PUBLIC_API_BASE + attributes.thumbnail.data.attributes.url}
+          // src={process.env.NEXT_PUBLIC_API_BASE + attributes.thumbnail.data.attributes.url}
           w="100%"
           h="300px"
           objectFit={"cover"}
         />{" "}
         <Flex gap={2} my={3}>
-          <Tag>{attributes.category}</Tag>
+          {/* <Tag>{attributes.category}</Tag> */}
           <Flex align={"center"} gap={2}>
             <Icon as={FaBookOpen} />
             <Text>5 mins Read</Text>
           </Flex>
         </Flex>
-        <Heading className="anton">{attributes.title}</Heading>
+        {/* <Heading className="anton">{attributes.title}</Heading> */}
         <Text maxW="500px" my={2}>
-          {truncate(attributes.description)}
+          {/* {truncate(attributes.description)} */}
         
           <Link
-            href={"post/" + attributes.slug}
+            // href={"post/" + attributes.slug}
             display={"block"}
             textDecoration={"underline"}
             color="blue.300"

@@ -1,21 +1,18 @@
-
 :root {
-  --bg:black;
-  --primary: #50E357;
-  --gitBlue : #0C46D3 ;
-  --gitBlack: #101010; 
-  --gitGreen: #388E3C ; 
+  --bg: black;
+  --primary: #50e357;
+  --gitBlue: #0c46d3;
+  --gitBlack: #101010;
+  --gitGreen: #388e3c;
   --gray: #979797;
-  --git-blood: #EA4335; 
+  --git-blood: #ea4335;
 }
-html {
-  padding: 0 10px;
-}
-*{
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Georama" !important;  
+  font-family: "Georama" !important;
 }
 
 .anton,
@@ -23,8 +20,23 @@ html {
   font-family: "Anton" !important;
 }
 
+@media screen and (max-width: 500px) {
+  .top-news .hero .title {
+    font-size: 2rem;
+  }
+  .top-news .hero .description {
+    font-size: 14px;
+  }
+}
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
+  .top-header .navigation-links {
+    display: none;
+  }
+
+  .top-header .menu {
+    display: flex;
+  }
   .top-news {
     grid-template-columns: 1fr !important;
   }
@@ -36,10 +48,10 @@ html {
   .top-categories h2 {
     font-size: 2rem;
   }
-
+  /* 
   .grid-posts-items {
     grid-template-columns: 1fr !important;
-  }
+  } */
 }
 
 /* // .footer {
