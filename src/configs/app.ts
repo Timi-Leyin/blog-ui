@@ -2,8 +2,8 @@ const appConfig = {
     links:[
         {href:"/",label:"Latest"},
         {href:"/tags/music",label:"Music"},
-        {href:"/tags/tech",label:"Design"},
-        {href:"/tags/techs",label:"Management"},
+        {href:"/tags/design",label:"Design"},
+        {href:"/tags/management",label:"Management"},
         {href:"/tags/entertainment",label:"Entertainment"},
     ],
     footerLinks:[
