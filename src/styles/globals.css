@@ -19,3 +19,9 @@
 .typography * {
   font-family: "Anton" !important;
 }
+
+@media screen and (max-width: 1000px) {
+  .post-grid {
+    display: block !important;
+  }
+}
