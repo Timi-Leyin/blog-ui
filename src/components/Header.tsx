@@ -13,10 +13,10 @@ import Nav from "./Nav";
 import { motion } from "framer-motion";
 const Header = () => {
   return (
-    <Box px={10} pos="absolute" w="full">
-      <Flex justify={"space-between"} p={5} align="center">
-        <Flex align={"center"} gap={5}>
-          <Icon as={HambergerMenu} fontSize={40} cursor={"pointer"} />
+    <Box px={8} className="header" pos="absolute" w="full">
+      <Flex justify={"space-between"}  p={5} align="center">
+        <Flex align={"center"} className="header-left" gap={5}>
+          <Icon as={HambergerMenu} fontSize={35} cursor={"pointer"} />
           <Link href="/">
             <Heading as={motion.h1} layout className="typography">
               .News Blog
@@ -24,7 +24,7 @@ const Header = () => {
           </Link>
         </Flex>
         {/* <Button>Contact Us</Button> */}
-        <Flex gap={5}>
+        <Flex gap={5} className="social-media">
           <Link href={""} title="Follow us on :::::::">
             {" "}
             <Icon variant="Bold" as={Facebook} />

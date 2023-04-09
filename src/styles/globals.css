@@ -25,3 +25,16 @@
     display: block !important;
   }
 }
+
+
+@media screen and (max-width:500px) {
+  .header .social-media{
+    display: none;
+  }
+  .header .header-left{
+    justify-content: space-between;
+    flex: 1;
+    flex-direction: row-reverse;
+    width: 100%;
+  }
+}

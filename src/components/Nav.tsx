@@ -9,7 +9,7 @@ const Nav = () => {
   return (
     <Box as="nav">
       <Divider />
-      <Flex p={5} gap={10}>
+      <Flex p={5} w="full" overflowX={"auto"} gap={10}>
         {appConfig.links.map((link, i) => (
           <Box as={Link} pos="relative" href={link.href} key={i}>
             {location == link.href && (
