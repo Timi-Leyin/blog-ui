@@ -8,11 +8,19 @@ export const instance = axios.create({
 });
 
 const Request = (req: any, err?: boolean) => {
+ try {
   return {
     data: !err ? req.data : { msg: "Check your Internet Connection" },
     status: !err ? req.status : 0,
     statusText: !err ? req.statusText : "ERR NETWORK",
   };
+ } catch (error) {
+  return{
+    data:{ msg: "Check your Internet Connection" },
+    status:0,
+    statusText: "ERR NETWORK",
+  }
+ }
 };
 /**
  * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
