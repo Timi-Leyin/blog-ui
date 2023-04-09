@@ -28,6 +28,9 @@
   white-space: pre-wrap;
 }
 
+
+
+
 @media screen and (max-width: 1000px) {
   .post-grid {
     display: block !important;
@@ -44,5 +47,12 @@
     flex: 1;
     flex-direction: row-reverse;
     width: 100%;
+  }
+}
+
+
+@media screen and (max-width:800px) {
+  .tag-posts{
+    flex-wrap: wrap;
   }
 }

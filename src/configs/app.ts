@@ -3,7 +3,7 @@ const appConfig = {
         {href:"/",label:"Latest"},
         {href:"/tags/music",label:"Music"},
         {href:"/tags/design",label:"Design"},
-        {href:"/tags/management",label:"Management"},
+        {href:"/tags/gaming",label:"Gaming"},
         {href:"/tags/entertainment",label:"Entertainment"},
     ],
     footerLinks:[

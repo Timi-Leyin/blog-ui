@@ -13,7 +13,7 @@ import Nav from "./Nav";
 import { motion } from "framer-motion";
 const Header = () => {
   return (
-    <Box px={8} className="header" pos="absolute" w="full">
+    <Box px={8}className="header" pos="absolute" w="full">
       <Flex justify={"space-between"}  p={5} align="center">
         <Flex align={"center"} className="header-left" gap={5}>
           <Icon as={HambergerMenu} fontSize={35} cursor={"pointer"} />

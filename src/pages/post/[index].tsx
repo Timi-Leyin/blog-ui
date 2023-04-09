@@ -4,12 +4,12 @@ import { Box, Flex, Heading, Image, Tag, Text } from "@chakra-ui/react";
 import { marked } from "marked";
 import Head from "next/head";
 import React from "react";
+import { Palette, usePalette } from 'color-thief-react'
 
 export async function getServerSideProps(context) {
   const { status, data, statusText } = await GetRequest(
     "/posts?populate=*&filters[slug][$eqi]=" + context.query.index
   );
-  console.log(data.data)
   if (status == 200 && data.data.length>0) {
     return {
       props: {
@@ -30,14 +30,20 @@ export async function getServerSideProps(context) {
 }
 
 const PostPage = ({ data, query, error }) => {
-  console.log(data, query, error);
+
+  const src = data? getThumbnail(data.attributes.thumbnail).full_url :"/thumbnail.webp"
+  const palette = usePalette(src, 3, "hex",{
+    crossOrigin:process.env.NEXT_PUBLIC_API_BASE
+  })
+
+  console.log(palette);
   return (
     <>
       <Head>
         <title>.News - {data ? data.attributes.title : "Page not Found"}</title>
       </Head>
       <Box>
-        <Box p={10} pt={"13%"} bg="orange.300">
+        <Box p={10} pt={"10rem"} color="white" bg={!palette.loading && !palette.error ? palette.data[2]:""} >
           <Text fontWeight={"bold"}>
             {data
               ? new Date(data.attributes.publishedAt).toDateString()
@@ -89,7 +95,7 @@ const PostPage = ({ data, query, error }) => {
 
         {
           data && (
-            <Box className="content" p={20} dangerouslySetInnerHTML={{__html:marked(data.attributes.content)}}></Box>
+            <Box className="content" p={10} dangerouslySetInnerHTML={{__html:marked(data.attributes.content)}}></Box>
           )
         }
       </Box>
