@@ -1,24 +1,46 @@
-import { Box, Divider, Heading, Image,Tag,Text } from '@chakra-ui/react'
-import Link from 'next/link'
-import React from 'react'
+import { PostCardProps } from "@/interface/components";
+import getThumbnail from "@/utils/getThumbnail";
+import { Box, Divider, Heading, Image, Tag, Text } from "@chakra-ui/react";
+import _ from "lodash";
+import Link from "next/link";
+import React from "react";
 
-const PostCard = ({thumbnail= false,fontSize,textSize}:PostCardProps) => {
+const PostCard = ({
+  post,
+  thumbnail = false,
+  fontSize,
+  textSize,
+}: PostCardProps) => {
   return (
     <Box>
-       {thumbnail &&  <Image src="/thumbnail.webp" />}
-       <Box my={3}>
-       {/* <Divider border="2px solid black" /> */}
-        <Heading py={3} className='typography' fontSize={fontSize}>E-Learning App design and How to make it Better</Heading>
+      {thumbnail && (
+        <Image src={getThumbnail(post.attributes.thumbnail).full_url} />
+      )}
+      <Box my={3}>
         {/* <Divider border="2px solid black" /> */}
-       </Box>
-       <Tag>Category</Tag>
-       <Text my={3} fontSize={textSize}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. At repudiandae atque assumenda expedita culpa, quasi similique incidunt facere soluta doloremque voluptas libero numquam dolorem voluptatem voluptatibus, ex, eum officiis commodi fugit harum dolorum error. Ipsa eveniet quis asperiores nihil corporis!
-       </Text>
-       <Box as={Link} py={3} fontWeight="bold" display="inline-block" href="/post/post-slug-here">Read more</Box>
-       <Divider border="1px solid black" />
+        <Heading py={3} className="typography" fontSize={fontSize}>
+          {post.attributes.title}
+        </Heading>
+        {/* <Divider border="2px solid black" /> */}
+      </Box>
+      <Tag>{post.attributes.category}</Tag>
+      <Text my={3} fontSize={textSize}>
+        {_.truncate(post.attributes.description, {
+          length: 100,
+        })}
+      </Text>
+      <Box
+        as={Link}
+        py={3}
+        fontWeight="bold"
+        display="inline-block"
+        href={`/post/${post.attributes.slug}`}
+      >
+        Read more
+      </Box>
+      <Divider border="1px solid black" />
     </Box>
-  )
-}
+  );
+};
 
-export default PostCard
+export default PostCard;
