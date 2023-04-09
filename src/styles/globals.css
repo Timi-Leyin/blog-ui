@@ -20,6 +20,14 @@
   font-family: "Anton" !important;
 }
 
+.content * {
+  margin:20px 0;
+  width: 100%;
+  position: relative;
+  font-size: 1.62rem;
+  white-space: pre-wrap;
+}
+
 @media screen and (max-width: 1000px) {
   .post-grid {
     display: block !important;
