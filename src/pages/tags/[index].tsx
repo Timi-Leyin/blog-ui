@@ -18,7 +18,7 @@ const TagsPage = ({query}) => {
   <Head>
     <title>.News | Tags - {query}</title>
   </Head>
-   <Box pt={"13%"} px={10}>
+   <Box pt={"10rem"} px={10}>
    <Center color="wheat" bgImage={"linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url(/thumbnail.webp)"} p={10} flexDirection={"column"}>
    <Text>Tags</Text>
     <Heading textTransform={"uppercase"} className="typography" fontSize={"5xl"} mt={2}>{query}</Heading>
