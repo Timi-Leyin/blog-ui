@@ -5,7 +5,7 @@ import React from "react";
 const ErrorWrapper = ({ error = false, children }: ErrorWrapperProps) => {
   return error ? <Box>
     <Center w="full" py={"20vh"} fontWeight="bold" h="full">
-        404 | An Error Occured
+        NET_ERR | An Error Occured
     </Center>
   </Box> : children;
 };
