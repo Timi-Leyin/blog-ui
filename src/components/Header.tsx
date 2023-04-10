@@ -8,47 +8,52 @@ import {
   Youtube,
 } from "iconsax-react";
 import Link from "next/link";
-import React from "react";
+import React, { Fragment, useState } from "react";
 import Nav from "./Nav";
 import { motion } from "framer-motion";
+import Menu from "./Menu";
 const Header = () => {
+  const [isOpen, setOpen] = useState(false);
   return (
-    <Box px={8}className="header" pos="absolute" w="full">
-      <Flex justify={"space-between"}  p={5} align="center">
-        <Flex align={"center"} className="header-left" gap={5}>
-          <Icon as={HambergerMenu} fontSize={35} cursor={"pointer"} />
-          <Link href="/">
-            <Heading as={motion.h1} layout className="typography">
-              .News Blog
-            </Heading>
-          </Link>
+    <Fragment>
+      <Box px={8} zIndex={10} className="header" pos="absolute" w="full">
+        <Flex justify={"space-between"} p={5} align="center">
+          <Flex align={"center"} className="header-left" gap={5}>
+            <Icon as={HambergerMenu} fontSize={35} cursor={"pointer"} />
+            <Link href="/">
+              <Heading as={motion.h1} layout className="typography">
+                .News Blog
+              </Heading>
+            </Link>
+          </Flex>
+          {/* <Button>Contact Us</Button> */}
+          <Flex gap={5} className="social-media">
+            <Link href={"/"} title="Follow us on :::::::">
+              {" "}
+              <Icon variant="Bold" as={Facebook} />
+            </Link>
+            <Link href={"/"} title="Follow us on :::::::">
+              {" "}
+              <Icon variant="Bold" as={Instagram} />
+            </Link>
+            <Link href={"/"} title="Follow us on :::::::">
+              {" "}
+              <Icon variant="Bold" as={Youtube} />
+            </Link>
+            <Link href={"/"} title="Follow us on :::::::">
+              {" "}
+              <Icon variant="Bold" as={Twitch} />
+            </Link>
+            <Link href={"/"} title="Follow us on :::::::">
+              {" "}
+              <Icon variant="Bold" as={Google} />
+            </Link>
+          </Flex>
         </Flex>
-        {/* <Button>Contact Us</Button> */}
-        <Flex gap={5} className="social-media">
-          <Link href={""} title="Follow us on :::::::">
-            {" "}
-            <Icon variant="Bold" as={Facebook} />
-          </Link>
-          <Link href={""} title="Follow us on :::::::">
-            {" "}
-            <Icon variant="Bold" as={Instagram} />
-          </Link>
-          <Link href={""} title="Follow us on :::::::">
-            {" "}
-            <Icon variant="Bold" as={Youtube} />
-          </Link>
-          <Link href={""} title="Follow us on :::::::">
-            {" "}
-            <Icon variant="Bold" as={Twitch} />
-          </Link>
-          <Link href={""} title="Follow us on :::::::">
-            {" "}
-            <Icon variant="Bold" as={Google} />
-          </Link>
-        </Flex>
-      </Flex>
-      <Nav />
-    </Box>
+        <Nav />
+      </Box>
+      {isOpen && <Menu />}
+    </Fragment>
   );
 };
 
