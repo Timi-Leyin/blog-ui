@@ -1,11 +1,15 @@
 import { Box, Flex, Heading,Text, Input } from "@chakra-ui/react";
 import { SearchNormal, SearchNormal1 } from "iconsax-react";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import PostCardSkeleton from "./PostCardSkeleton";
 import { MenuProps } from "@/interface/components";
+import postContext from "@/context/postContext";
+import log from "@/utils/log";
 
 const Menu = ({isOpen, setOpen}:MenuProps) => {
+  const posts = useContext(postContext);
+  log(posts)
   return isOpen && (
     <Box backdropFilter={"blur(10px)"} zIndex={20} position={"fixed"} h="full" w="full" bg={"rgba(255,255,255,.5)"}>
     <Heading>

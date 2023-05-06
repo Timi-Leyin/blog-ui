@@ -8,4 +8,4 @@
 - Feat: Search Post []
 - Fix: Related post []
 - Feat: Post Recommendation []
-- 
+- Feat: about page []
