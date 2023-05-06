@@ -52,7 +52,7 @@ const Header = () => {
         </Flex>
         <Nav />
       </Box>
-      <Menu isOpen={isOpen} />
+      <Menu setOpen={setOpen} isOpen={isOpen} />
     </Fragment>
   );
 };
