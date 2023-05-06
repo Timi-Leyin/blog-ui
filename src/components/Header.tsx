@@ -19,7 +19,7 @@ const Header = () => {
       <Box px={8} zIndex={10} className="header" pos="absolute" w="full">
         <Flex justify={"space-between"} p={5} align="center">
           <Flex align={"center"} className="header-left" gap={5}>
-            <Icon as={HambergerMenu} fontSize={35} cursor={"pointer"} />
+            <Icon as={HambergerMenu} onClick={() => setOpen(!isOpen)} fontSize={35} cursor={"pointer"} />
             <Link href="/">
               <Heading as={motion.h1} layout className="typography">
                 .News Blog
@@ -52,7 +52,7 @@ const Header = () => {
         </Flex>
         <Nav />
       </Box>
-      {isOpen && <Menu />}
+      <Menu isOpen={isOpen} />
     </Fragment>
   );
 };
