@@ -103,7 +103,7 @@ const PostPage = ({ data, query, error }) => {
               className="content"
               p={10}
               dangerouslySetInnerHTML={{
-                __html: marked(data.attributes.content),
+                __html: marked(data.attributes.content || ""),
               }}
             ></Box>
             <Box>

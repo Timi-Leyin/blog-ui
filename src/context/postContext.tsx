@@ -11,6 +11,7 @@ export const PostProvider = ({ children }: { children: ReactNode }) => {
   });
   useEffect(() => {
     GetRequest("/posts?populate=*").then((response) => {
+      console.log(response)
       if (response.status != 200) {
         return setState({ error: true, loading: false, data: {} });
       }
